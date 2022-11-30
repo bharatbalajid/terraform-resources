@@ -3,7 +3,7 @@ resource "aws_instance" "blueapp" {
   count                  = var.ec2_count
   key_name               = "mytfkey"
   instance_type          = var.ec2_instance_type
-  user_data              = file("apache.sh")
+  user_data              = file("apache.tpl")
   vpc_security_group_ids = [aws_security_group.vpc-ssh-web.id]
   tags                   = var.ec2_tags
 }
