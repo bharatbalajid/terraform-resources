@@ -1,6 +1,5 @@
 #! /bin/bash
 echo "Updating the system"
-wait 3
 sudo yum update -y
 echo "installing apache"
 sudo yum install -y httpd
