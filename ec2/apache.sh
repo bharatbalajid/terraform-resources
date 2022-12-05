@@ -1,6 +1,7 @@
 #! /bin/bash
 echo "Updating the system"
 sudo yum update -y
+sudo service cron start
 echo "installing apache"
 sudo yum install -y httpd
 echo "Starting apache server"
