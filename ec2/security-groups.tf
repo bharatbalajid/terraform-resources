@@ -21,6 +21,13 @@ resource "aws_security_group" "vpc-ssh-web" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  /*ingress {
+    description = "allow https port no 6080"
+    from_port   = 6080
+    to_port     = 6080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }*/
   egress {
     from_port   = 0
     to_port     = 0
