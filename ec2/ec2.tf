@@ -6,6 +6,6 @@ resource "aws_instance" "blueapp" {
   user_data              = file("apache.sh")
   vpc_security_group_ids = [aws_security_group.vpc-ssh-web.id]
   tags                   = {
-  name = "var.ec2_tags-${terraform.workspace}-${count.index}"
+  name = "vm-${terraform.workspace}-${count.index}"
   }
 }
