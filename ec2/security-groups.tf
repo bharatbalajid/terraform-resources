@@ -1,5 +1,6 @@
 resource "aws_security_group" "vpc-ssh-web" {
   name = "vpc-ssh-web-sg-${terraform.workspace}"
+  vpc_id = aws_vpc.blueapp_vpc.id
   ingress {
     description = "allow ssh port no 22"
     from_port   = 22
