@@ -4,7 +4,7 @@ resource "aws_instance" "blueapp" {
   key_name               = "mytfkey"
   instance_type          = var.ec2_instance_type
   user_data              = file("apache.sh")
-  subnet_id              = aws_subnet.blueapp_sn_pub.id
+  subnet_id              = data.aws_subnet.subnet.id
   vpc_security_group_ids = [aws_security_group.vpc-ssh-web.id]
   tags = {
     Name = "${var.ec2_tags}-${terraform.workspace}-${count.index}"

@@ -18,3 +18,15 @@ data "aws_ami" "amazon-linux" {
     values = ["ebs"]
   }
 }
+data "aws_vpc" "vpc" {
+  filter {
+    name = "tag:Name"
+    values = ["Blueapp-default-vpc"]
+  }
+}
+data "aws_subnet" "subnet" {
+  filter {
+    name = "tag:Name"
+    values = ["Blueapp-default-sn"]
+  }
+}
