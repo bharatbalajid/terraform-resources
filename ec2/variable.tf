@@ -21,11 +21,10 @@ variable "ec2_instance_type" {
   default = "t2.micro"
 }
 variable "ec2_tags" {
-  type = string
+  type    = string
   default = "Blueapp"
-  }
-  variable "vpc_tags" {
-    type = string
-    default = "Blueapp"
-  }
-
+}
+variable "vpc_tags" {
+  type    = string
+  default = "Blueapp"
+}
